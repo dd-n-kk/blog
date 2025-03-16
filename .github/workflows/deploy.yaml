@@ -1,0 +1,34 @@
+name: deploy
+
+
+on:
+
+  push:
+    branches: main
+
+  workflow_dispatch:
+
+
+jobs:
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    # Grant permissions to GITHUB_TOKEN. (`actions/checkout` embeds it into `remote.origin.url`.)
+    permissions:
+      contents: write
+
+    steps:
+
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    # https://docs.astral.sh/uv/guides/integration/github/#caching
+    - name: Install uv with cache enabled
+      uses: astral-sh/setup-uv@v5
+      with:
+        enable-cache: true
+
+    - name: Deploy
+      run: uvx --with mkdocs-material mkdocs gh-deploy --force
