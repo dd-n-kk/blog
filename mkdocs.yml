@@ -1,0 +1,146 @@
+site_name: Snippets in Rain
+
+site_url: https://dd-n-kk.github.io/blog
+
+site_auther: dd-n-kk
+
+site_description: A blog sharing code snippets and learnings
+
+copyright: Copyright &copy; 2025 - 2025 dd-n-kk
+
+
+theme:
+
+  name: material
+
+  custom_dir: overrides
+
+  icon:
+    admonition:
+      quote: fontawesome/solid/rainbow
+
+  language: en
+
+  favicon: assets/rain.svg
+
+  logo: assets/rain.svg
+
+  features:
+  - content.code.copy
+  - navigation.footer
+  - navigation.indexes
+  - navigation.sections
+  - navigation.top
+  - navigation.tracking
+  - search.highlight
+  - search.suggest
+  - toc.follow
+
+  palette:
+  # State: Light mode
+  - media: '(prefers-color-scheme: light)'
+    scheme: default
+    toggle:
+      icon: material/toggle-switch
+      name: 'Light to Dark'
+    primary: black
+    accent: light blue
+  # State: Dark mode
+  - media: '(prefers-color-scheme: dark)'
+    scheme: slate
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: 'Dark to Light'
+    primary: black
+    accent: orange
+
+
+extra:
+
+  social:
+  - icon: fontawesome/brands/github
+    link: 'https://github.com/dd-n-kk'
+
+
+plugins:
+
+- blog:
+    archive_date_format: yyyy
+    archive_url_date_format: yyyy
+    archive_url_format: "archive/{date}"
+    authors: false
+    blog_dir: .
+    categories_allowed:
+    - Miscellany
+    categories_url_format: "category/{slug}"
+    pagination_format: "$link_first ~2~ $link_last"
+    pagination_per_page: 5
+    pagination_url_format: "{page}"
+    post_date_format: yyyy-MM-dd
+    post_excerpt: required
+    post_readtime: false
+    post_url_date_format: yyyy-MM-dd
+    post_url_format: "{slug}"
+
+- meta
+
+- search
+
+- tags
+
+
+markdown_extensions:
+
+# Python Markdown
+
+- admonition
+
+- attr_list
+
+- footnotes
+
+- md_in_html
+
+- toc:
+    permalink: true
+    title: Contents
+    toc_depth: 3
+
+# Python Markdown Extensions
+
+- pymdownx.arithmatex:
+    generic: true
+
+- pymdownx.betterem:
+    smart_enable: all
+
+- pymdownx.caret
+
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+- pymdownx.highlight:
+    anchor_linenums: true
+    line_spans: __span
+    pygments_lang_class: true
+
+- pymdownx.inlinehilite
+
+- pymdownx.superfences
+
+- pymdownx.tabbed:
+    alternate_style: true
+
+- pymdownx.tilde
+
+
+extra_css:
+- stylesheets/extra.css
+- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css
+
+
+extra_javascript:
+- javascripts/katex.js
+- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js
+- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js
