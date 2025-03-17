@@ -1,13 +1,22 @@
 ---
 date:
-  created: 2025-03-17
-  updated: 2025-03-17
-draft: true
+  created: 2025-01-01
+  updated: 2025-01-01
+
 categories:
 - Miscellany
+
+tags:
+- Material for MkDocs
+
+draft: true
 ---
 
 # Sandbox
+
+<a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/foo.ipynb" target="_parent">
+    :simple-googlecolab: Open in Colab
+</a>
 
 <!-- more -->
 
