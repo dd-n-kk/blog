@@ -1,9 +1,9 @@
-[data-md-color-primary="black"] {
-  --md-typeset-a-color: #1E1E1E;
+[data-md-color-scheme="default"][data-md-color-primary="black"] {
+  --md-typeset-a-color: #002577;
 }
 
 [data-md-color-scheme="slate"][data-md-color-primary="black"] {
-  --md-typeset-a-color: #D4D4D4;
+  --md-typeset-a-color: #E6CA95;
 }
 
 [data-md-color-scheme="default"] {
