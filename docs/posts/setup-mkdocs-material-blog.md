@@ -9,7 +9,7 @@ categories:
 tags:
 - Material for MkDocs
 
-slug: mkdocs-material-blog-setup
+slug: setup-mkdocs-material-blog
 ---
 
 # Setting up a blog with Material for MkDocs
