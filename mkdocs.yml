@@ -71,6 +71,7 @@ plugins:
     authors: false
     blog_dir: .
     categories_allowed:
+    - Data preparation
     - Miscellany
     categories_url_format: "category/{slug}"
     pagination_format: "$link_first ~2~ $link_last"
