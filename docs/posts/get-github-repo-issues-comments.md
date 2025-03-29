@@ -1,7 +1,7 @@
 ---
 date:
   created: 2025-03-26
-  updated: 2025-03-26
+  updated: 2025-03-29
 
 categories:
 - Miscellany
@@ -14,11 +14,11 @@ slug: get-github-repo-issues-comments
 
 # Getting GitHub repo issues and comments
 
-This post is about getting paginated data of issues and comments in a repository
-through [:material-github: GitHub REST API][1].
-This is the first part of my adaptation of the tutorial
-[:simple-huggingface: Hugging Face NLP Course: Creating your own dataset][2],
-which creates a dataset of GitHub repository issues for semantic search.
+This is Part I of my adaptation of the tutorial
+[:simple-huggingface: Hugging Face NLP Course: Creating your own dataset][2].
+Other posts in the series:
+
+- Part II: [Making a Hugging Face dataset of GitHub repo issues][1]
 
 <a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/get-github-repo-issues-comments.ipynb" target="_parent">
     :simple-googlecolab: Open in Colab
@@ -28,7 +28,7 @@ which creates a dataset of GitHub repository issues for semantic search.
 
 ## Preparations
 
-We use the [:simple-uv: astral-sh/uv][6] repository as an example:
+We use the [:simple-uv: astral-sh/uv][6] repository as an example.
 
 
 ```python
@@ -314,7 +314,7 @@ assert issues == load_jsonl("issues.jsonl")
 assert comments == load_jsonl("comments.jsonl")
 ```
 
-[1]: https://docs.github.com/en/rest
+[1]: make-huggingface-dataset-of-github-repo-issues.md
 [2]: https://huggingface.co/learn/nlp-course/en/chapter5/5
 [3]: https://docs.github.com/en/rest/issues/comments?#list-issue-comments
 [4]: https://docs.github.com/en/rest/issues/comments?#list-issue-comments-for-a-repository
