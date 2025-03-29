@@ -1,7 +1,7 @@
 ---
 date:
   created: 2025-03-22
-  updated: 2025-03-22
+  updated: 2025-03-29
 
 categories:
 - Data preparation
@@ -15,12 +15,12 @@ slug: clean-uci-drug-review-dataset
 
 # Cleaning UCI ML Drug Review Dataset
 
-This post is my [:simple-polars: Polars][1]-centric adaptation of the tutorial
+This is my [:simple-polars: Polars][1]-centric adaptation of the tutorial
 [:simple-huggingface: Hugging Face NLP Course: Time to slice and dice][2],
 which cleans the UCI ML Drug Review dataset available at
 [:fontawesome-brands-kaggle: Kaggle][3].
 
-The cleaned dataset is available at [:material-database: Hugging Face Hub][4].
+:material-database: Cleaned dataset: [dd-n-kk/uci-drug-review-cleaned][4]
 
 <a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/clean-uci-drug-review-dataset.ipynb" target="_parent">
     :simple-googlecolab: Open in Colab
