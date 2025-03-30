@@ -1,7 +1,7 @@
 ---
 date:
   created: 2025-03-18
-  updated: 2025-03-29
+  updated: 2025-03-30
 
 categories:
 - Miscellany
@@ -14,7 +14,7 @@ slug: setup-mkdocs-material-blog
 
 # Setting up a blog with Material for MkDocs
 
-:octicons-repo-template-16: GitHub template: [dd-n-kk/mkdocs-material-blog][2]
+GitHub template: [:octicons-repo-template-16: dd-n-kk/mkdocs-material-blog][2]
 
 <!-- more -->
 
