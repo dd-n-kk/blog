@@ -1,13 +1,14 @@
 ---
 date:
   created: 2025-03-26
-  updated: 2025-03-29
+  updated: 2025-03-30
 
 categories:
 - Miscellany
 
 tags:
 - REST API
+- "Series: GitHub repo issues dataset"
 
 slug: get-github-repo-issues-comments
 ---
@@ -16,19 +17,16 @@ slug: get-github-repo-issues-comments
 
 This is Part I of my adaptation of the tutorial
 [:simple-huggingface: Hugging Face NLP Course: Creating your own dataset][2].
-Other posts in the series:
-
-- Part II: [Making a Hugging Face dataset of GitHub repo issues][1]
 
 <a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/get-github-repo-issues-comments.ipynb" target="_parent">
-    :simple-googlecolab: Open in Colab
+    :simple-googlecolab: Colab notebook
 </a>
 
 <!-- more -->
 
 ## Preparations
 
-We use the [:simple-uv: astral-sh/uv][6] repository as an example.
+We use the [:simple-uv: astral-sh/uv][1] repository as an example.
 
 
 ```python
@@ -46,7 +44,7 @@ which often surpasses even an authenticated quota of [5000][5] requests per hour
 
 Alternatively, we can use the paginated [repository issue comments endpoint][4]
 to get up to 100 comments per request.
-This also allows getting issues and comments data in a unified approach:
+This also allows getting issues and comments data in a unified approach.
 
 
 ```python
@@ -137,9 +135,7 @@ def show_rate_limit(response: Response) -> None:
 
 ## Caveats and workarounds
 
-
-
-Unfortunately, GitHub seems to impose a 300-page limit on paginated query results.
+Unfortunately, GitHub imposes a 300-page limit on paginated query results.
 To get more than 30000 issue comments, a workaround is to query for time-sorted entries
 and restrict the query range with the `since` parameter.
 However, because `since` is based on the last update time,
@@ -314,9 +310,8 @@ assert issues == load_jsonl("issues.jsonl")
 assert comments == load_jsonl("comments.jsonl")
 ```
 
-[1]: make-huggingface-dataset-of-github-repo-issues.md
+[1]: https://github.com/astral-sh/uv
 [2]: https://huggingface.co/learn/nlp-course/en/chapter5/5
 [3]: https://docs.github.com/en/rest/issues/comments?#list-issue-comments
 [4]: https://docs.github.com/en/rest/issues/comments?#list-issue-comments-for-a-repository
 [5]: https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api?#primary-rate-limit-for-authenticated-users
-[6]: https://github.com/astral-sh/uv
