@@ -96,7 +96,8 @@ plugins:
         - Material for MkDocs
         - REST API
       series:
-        include: []
+        include:
+        - "Series: GitHub repo issues dataset"
 
 
 markdown_extensions:
