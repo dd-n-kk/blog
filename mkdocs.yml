@@ -87,7 +87,16 @@ plugins:
 
 - search
 
-- tags
+- tags:
+    listings_map:
+      topics:
+        include:
+        - Hugging Face
+        - Polars
+        - Material for MkDocs
+        - REST API
+      series:
+        include: []
 
 
 markdown_extensions:
