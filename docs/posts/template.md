@@ -15,7 +15,7 @@ draft: true
 # Sandbox
 
 <a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/foo.ipynb" target="_parent">
-    :simple-googlecolab: Open in Colab
+    :simple-googlecolab: Colab notebook
 </a>
 
 <!-- more -->
