@@ -1,7 +1,7 @@
 ---
 date:
   created: 2025-03-22
-  updated: 2025-03-29
+  updated: 2025-03-30
 
 categories:
 - Data preparation
@@ -17,13 +17,13 @@ slug: clean-uci-drug-review-dataset
 
 This is my [:simple-polars: Polars][1]-centric adaptation of the tutorial
 [:simple-huggingface: Hugging Face NLP Course: Time to slice and dice][2],
-which cleans the UCI ML Drug Review dataset available at
+which cleans the UCI ML Drug Review dataset available on
 [:fontawesome-brands-kaggle: Kaggle][3].
 
-:material-database: Cleaned dataset: [dd-n-kk/uci-drug-review-cleaned][4]
+Cleaned dataset on Hugging Face Hub: [:material-database: dd-n-kk/uci-drug-review-cleaned][4]
 
 <a href="https://colab.research.google.com/github/dd-n-kk/notebooks/blob/main/blog/clean-uci-drug-review-dataset.ipynb" target="_parent">
-    :simple-googlecolab: Open in Colab
+    :simple-googlecolab: Colab notebook
 </a>
 
 <!-- more -->
@@ -33,11 +33,11 @@ which cleans the UCI ML Drug Review dataset available at
 
 ```python
 # Set this to an empty string to avoid saving the dataset file.
-DIRPATH = "/content/drive/MyDrive/uci-drug-review-cleaned/"
+DATA_DIR = "uci-drug-review-cleaned/"
 
 # Set these to empty strings to avoid uploading the dataset.
 REPO_ID = "dd-n-kk/uci-drug-review-cleaned"
-COLAB_SECRET = "HF_TOKEN"
+SECRET = "HF_TOKEN"
 ```
 
 
@@ -198,7 +198,7 @@ Fortunately most if not all drug names seem to be valid.
 
 ## Handling capitalization of `drugName`s
 
-Fortunately there are very few lowercase drug names and all of them are valid.
+There are very few lowercase drug names and all of them are valid.
 We can also confirm that no drug name is cased differently in the dataset.
 To preserve the original data as much as possible,
 I title-case the lowercase names instead of lowercasing all drug names.
@@ -528,25 +528,17 @@ df = df.with_columns(col("date").str.to_date("%-d-%b-%y"))
 
 ## Saving and sharing
 
-
-```python
-if DIRPATH:
-    import os
-    from google.colab import drive
-
-    drive.mount('/content/drive')
-    os.makedirs(DIRPATH, exist_ok=True)
-    df.write_csv(f"{DIRPATH}/train.tsv", separator="\t")
-```
-
-    Mounted at /content/drive
-
-
 The test set is processed the same way and the procedure is omitted for brevity.
 
 
 ```python
-if REPO_ID and COLAB_SECRET:
+if DATA_DIR:
+    import os
+
+    os.makedirs(DATA_DIR, exist_ok=True)
+    df.write_csv(f"{DATA_DIR}/train.tsv", separator="\t")
+
+if REPO_ID and SECRET:
     !uv pip install --system -q datasets
 
     from datasets import load_dataset
@@ -554,11 +546,11 @@ if REPO_ID and COLAB_SECRET:
 
     dataset = load_dataset(
         "csv",
-        data_files=dict(train=f"{DIRPATH}/train.tsv", test=f"{DIRPATH}/test.tsv"),
+        data_files=dict(train=f"{DATA_DIR}/train.tsv", test=f"{DATA_DIR}/test.tsv"),
         delimiter="\t",
     )
 
-    dataset.push_to_hub(REPO_ID, token=userdata.get(COLAB_SECRET))
+    dataset.push_to_hub(REPO_ID, token=userdata.get(SECRET))
 ```
 
 
@@ -576,12 +568,6 @@ if REPO_ID and COLAB_SECRET:
 
     Creating parquet from Arrow format:   0%|          | 0/54 [00:00<?, ?ba/s]
 
-
-
-```python
-from google.colab import drive
-drive.flush_and_unmount()
-```
 
 [1]: https://pola.rs/
 [2]: https://huggingface.co/learn/nlp-course/chapter5/3
