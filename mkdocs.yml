@@ -1,12 +1,20 @@
 site_name: Snippets in Rain
 
-site_url: https://dd-n-kk.github.io/blog
+site_url: "https://dd-n-kk.github.io/blog"
 
 site_author: dd-n-kk
 
 site_description: A blog sharing code snippets and learnings
 
 copyright: Copyright &copy; 2025 - 2025 dd-n-kk
+
+
+nav:
+- Posts: index.md
+- Tags:
+    Topics: topics.md
+    Tools: tools.md
+    Series: series.md
 
 
 theme:
@@ -38,19 +46,19 @@ theme:
 
   palette:
   # State: Light mode
-  - media: '(prefers-color-scheme: light)'
+  - media: "(prefers-color-scheme: light)"
     scheme: default
     toggle:
       icon: material/toggle-switch
-      name: 'Light to Dark'
+      name: Light to Dark
     primary: black
     accent: light blue
   # State: Dark mode
-  - media: '(prefers-color-scheme: dark)'
+  - media: "(prefers-color-scheme: dark)"
     scheme: slate
     toggle:
       icon: material/toggle-switch-off-outline
-      name: 'Dark to Light'
+      name: Dark to Light
     primary: black
     accent: orange
 
@@ -59,7 +67,7 @@ extra:
 
   social:
   - icon: fontawesome/brands/github
-    link: 'https://github.com/dd-n-kk'
+    link: "https://github.com/dd-n-kk"
 
 
 plugins:
@@ -89,12 +97,15 @@ plugins:
 
 - tags:
     listings_map:
-      topics:
+      tools:
         include:
-        - Hugging Face
         - Polars
+        - Hugging Face
         - Material for MkDocs
         - REST API
+      topics:
+        include:
+        - NLP
       series:
         include:
         - "Series: GitHub repo issues dataset"
@@ -150,10 +161,10 @@ markdown_extensions:
 
 extra_css:
 - stylesheets/extra.css
-- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css
+- "https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css"
 
 
 extra_javascript:
 - javascripts/katex.js
-- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js
-- https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js
+- "https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"
+- "https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"

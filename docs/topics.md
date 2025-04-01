@@ -3,6 +3,6 @@ hide:
 - footer
 ---
 
-# Tags
+# Topics
 
 <!-- material/tags topics -->
