@@ -12,9 +12,9 @@ copyright: Copyright &copy; 2025 - 2025 dd-n-kk
 nav:
 - Posts: index.md
 - Tags:
-    Topics: topics.md
-    Tools: tools.md
-    Series: series.md
+  - Topics: topics.md
+  - Tools: tools.md
+  - Series: series.md
 
 
 theme:
