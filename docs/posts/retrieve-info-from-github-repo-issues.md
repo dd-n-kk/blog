@@ -18,7 +18,7 @@ slug: retrieve-info-from-github-repo-issues
 # Retrieving information from a GitHub repo issues dataset
 
 This is Part III of my adaptation of
-:simple-huggingface: Hugging Face NLP Course: [Creating your own dataset][1].
+[:simple-huggingface: Hugging Face NLP Course: Creating your own dataset][1].
 It consists of several parts:
 
 1. Creating a corpus of issue-comment pairs from the previously prepared dataset.
