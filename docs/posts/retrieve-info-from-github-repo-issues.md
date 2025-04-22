@@ -90,6 +90,7 @@ comments_df = pl.concat([comments["train"].to_polars(), comments["test"].to_pola
 ### Issues
 
 I decide to remove:
+
 - Issues with null bodies.
 - Issues created by bots, because they usually contain little info.
 - Pull requests not yet merged, for they often contain suggestions not yet adopted.
@@ -153,6 +154,7 @@ q.head(5)
 
 
 To shorten these issues, I:
+
 - Replace Markdown fenced code blocks containing too many characters with `[CODE]`.
 - Replace each HTML element `<detail>` with `[DETAIL]`.
 - Replace HTML comments `<!-- ... -->` with `[COMMENT]`.
